@@ -29,9 +29,10 @@ After this, run `csvtomd --help` from your terminal to verify it's installed pro
 # Using Docker
 
 If you do not have any python (*3) environment, you can run this code using docker. The steps as follows:
-* Pull python images from docker registry `docker pull python`
+* Pull python image from docker registry, you can use command `docker pull python`
 * Clone this repo to your local directory
-* Run csvtomd.py in python docker image directly `docker run -it --rm --name my-running-script -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp python:3 python csvtomd.py your csv file`
+* Run `csvtomd.py` in python docker image directly `docker run -it --rm --name my-running-script -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp python:3 python csvtomd.py your csv file`
+* More details, you can visit https://registry.hub.docker.com/_/python/
 
 ## Example Input
 
