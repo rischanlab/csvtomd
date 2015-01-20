@@ -114,12 +114,17 @@ def main():
         # than one CSV was provided
         file_count = len(args.files)
         if args.show_filenames and file_count > 1:
-            print(filename + '\n')
+            #print(filename + '\n')
+             md_file = open("output" + filename + ".md","w")
+             md_file.write(md_table(table, padding=args.padding))
+             md_file.close()
+        else:
+            md_file = open("output.md","w")
+            md_file.write(md_table(table, padding=args.padding))
+            md_file.close()
         # Generate and print Markdown table
         #print(md_table(table, padding=args.padding))
-        md_file = open("output.md","w")
-        md_file.write(md_table(table, padding=args.padding))
-        md_file.close()
+        
 
 
 if __name__ == '__main__':
