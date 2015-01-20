@@ -11,6 +11,7 @@ More info: http://github.com/mplewis/csvtomd
 import argparse
 from csv import reader
 import sys
+import os
 
 
 def check_negative(value):
@@ -115,9 +116,10 @@ def main():
         file_count = len(args.files)
         if args.show_filenames and file_count > 1:
             #print(filename + '\n')
-             md_file = open("output" + filename + ".md","w")
-             md_file.write(md_table(table, padding=args.padding))
-             md_file.close()
+            onlyfilename = os.path.splitext(filename)[0]
+            md_file = open("output" + onlyfilename + ".md","w")
+            md_file.write(md_table(table, padding=args.padding))
+            md_file.close()
         else:
             md_file = open("output.md","w")
             md_file.write(md_table(table, padding=args.padding))
