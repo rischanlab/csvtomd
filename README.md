@@ -26,6 +26,13 @@ After this, run `csvtomd --help` from your terminal to verify it's installed pro
 
 `csvtomd SHEET1.csv SHEET2.csv SHEET3.csv` generates three Markdown tables from the input files and displays them alongside the input filename.
 
+# Using Docker
+
+If you do not have any python (*3) environment, you can run this code using docker. The steps as follows:
+* Pull python images from docker registry `docker pull python`
+* Clone this repo to your local directory
+* Run csvtomd.py in python docker image directly `docker run -it --rm --name my-running-script -v "$(pwd)":/usr/src/myapp -w /usr/src/myapp python:3 python csvtomd.py your csv file`
+
 ## Example Input
 
 File: `thrones.csv`
